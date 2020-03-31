@@ -1,4 +1,5 @@
 # Ignore Mac system files
 .DS_store
 
-/Users/samvoong/Development/Espresso/be_to_fe/class
+# Ignore class notes
+/class
