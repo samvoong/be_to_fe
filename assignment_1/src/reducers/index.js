@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import thunkReducer from './postReducer';
+import postsReducer from './postsReducer';
 
 const rootReducer = combineReducers({
-    thunk: thunkReducer
+    thunk: postsReducer
 });
 
 export default rootReducer;

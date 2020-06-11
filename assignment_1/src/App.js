@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch} from 'react-redux';
 import * as actioncreators from './actioncreators';
+import RouteConfig from './Route'
 
 function App() {
   const state = useSelector(state => ({
@@ -10,23 +11,17 @@ function App() {
   const dispatch  = useDispatch();
 
   useEffect(() => {
-    dispatch(actioncreators.fetchUsers())
+    dispatch(actioncreators.fetchPosts())
   }, [dispatch])
 
-  const ListItem = state.thunkInfo.data.map(user => 
-    <li key={user.id}>{user.title} - {user.body}</li>
+  const ListItem = state.thunkInfo.data.map(post => 
+    <li key={post.id}>{post.title} - {post.body}</li>
   )
 
   return (
     <div className="App">
       <header className="App-header">
-        { state.thunkInfo.loading && <span>Loading users...</span>}
-
-        {
-          <ul>
-            {!state.thunkInfo.loading && ListItem}
-          </ul>
-        }
+        <RouteConfig />
       </header>
     </div>
   );

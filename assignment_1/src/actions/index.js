@@ -1,10 +1,10 @@
 import keyMirror from 'keymirror';
 
 const actionTypes = {
-	thunk: keyMirror({
-		FETCH_USER_REQUEST: null,
-		FETCH_USER_SUCCESS: null,
-		FETCH_USER_ERROR: null,
+	posts: keyMirror({
+		FETCH_POSTS_REQUEST: null,
+		FETCH_POSTS_SUCCESS: null,
+		FETCH_POSTS_ERROR: null,
     }),
     
 };

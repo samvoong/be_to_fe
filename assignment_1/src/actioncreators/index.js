@@ -1,31 +1,31 @@
 import actionTypes from '../actions'
 console.log("actionTypes", actionTypes)
 
-export const thunkFetchUserRequest = () => ({
-    type: actionTypes.thunk.FETCH_USER_REQUEST
+export const thunkFetchPostsRequest = () => ({
+    type: actionTypes.posts.FETCH_POSTS_REQUEST
 });
 
-export const thunkFetchUserSuccess = users => ({
-    type: actionTypes.thunk.FETCH_USER_SUCCESS,
+export const thunkFetchPostsSuccess = users => ({
+    type: actionTypes.posts.FETCH_POSTS_SUCCESS,
     payload: users
 });
 
-export const thunkFetchUserError = err => ({
-    type: actionTypes.thunk.FETCH_USER_ERROR,
+export const thunkFetchPostsError = err => ({
+    type: actionTypes.posts.FETCH_POSTS_ERROR,
     payload: err
 });
 
-export const fetchUsers = () => {
+export const fetchPosts = () => {
     return (dispatch) => {
-        dispatch(thunkFetchUserRequest());
+        dispatch(thunkFetchPostsRequest());
         fetch('https:/jsonplaceholder.typicode.com/posts')
         .then(response => response.json())
         .then(data => {
-            dispatch(thunkFetchUserSuccess(data));
+            dispatch(thunkFetchPostsSuccess(data));
         })
         .catch(err => {
             const errMsg = err.message;
-            dispatch(thunkFetchUserError(errMsg));
+            dispatch(thunkFetchPostsError(errMsg));
         })
     }
 }

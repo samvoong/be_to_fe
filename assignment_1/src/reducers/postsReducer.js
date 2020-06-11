@@ -1,22 +1,22 @@
 import actionTypes from '../actions';
 
-const thunkInitialState = {
+const initialState = {
     loading: true,
     data: [],
     error: ''
 };
 
-const thunkReducer = (state=thunkInitialState, action) => {
+const postsReducer = (state=initialState, action) => {
     switch(action.type) {
-        case actionTypes.thunk.FETCH_USER_REQUEST:
+        case actionTypes.posts.FETCH_POSTS_REQUEST:
             return { ...state, loading: true };
-        case actionTypes.thunk.FETCH_USER_SUCCESS:
+        case actionTypes.posts.FETCH_POSTS_SUCCESS:
             return { ...state, loading: false, data: action.payload, error: ''};
-        case actionTypes.thunk.FETCH_USER_ERROR:
+        case actionTypes.posts.FETCH_POSTS_ERROR:
             return { ...state, loading: false, data: [], error: action.payload};
         default:
             return state;
     }
 }
 
-export default thunkReducer;
+export default postsReducer;
