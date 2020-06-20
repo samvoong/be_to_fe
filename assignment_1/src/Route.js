@@ -7,10 +7,9 @@ export default class RouteConfig extends Component {
   render() {
     return (
       <Router>
-        <div className="container">
-          <h2 className="mb-3">Router Thing</h2>
+        <div className="router">
+          <h1 className="title">Welcome to my blog</h1>
           <Nav />
-          <hr />
           {routes.map((route, i) => (
             <Route
               key={i}
@@ -36,7 +35,7 @@ const Nav = () => {
         </li>
         <li className="nav-item">
           <Link className="nav-link" to="/posts">
-            About
+            Posts
           </Link>
         </li>
       </ul>

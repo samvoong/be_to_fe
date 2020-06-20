@@ -1,0 +1,53 @@
+//Common Styling
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+p {
+  font-size: 1.1rem;
+}
+
+a {
+  color: #ea3546;
+  text-decoration: none;
+}
+
+.button {
+  display: inline-block;
+  background: #ea3546;
+  color: white;
+  border-radius: 4px;
+  font-weight: 700;
+  padding: 1rem 1.5rem;
+  font-size: 1.5rem;
+}
+
+
+//Styling for form component
+@mixin input {
+  padding: 1rem;
+  margin: 2rem 0;
+  font-size: 1.5rem;
+  border: 0; 
+  border-bottom:1px solid rgba(151, 153, 154, 0.29); 
+  box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+
+}
+
+
+.formdiv {
+
+  input[type=text] {
+    @include input;
+
+  }
+  
+  textarea {
+    @include input;
+  }
+
+}

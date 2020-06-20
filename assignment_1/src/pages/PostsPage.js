@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react'
-import { connect } from 'react-redux'
 import { useSelector, useDispatch} from 'react-redux';
 import * as actioncreators from '../actioncreators';
 
@@ -17,13 +16,14 @@ const PostsPage = () => {
   }, [dispatch])
 
   const ListItem = state.thunkInfo.data.map(post => 
-    <li key={post.id}>{post.title} - {post.body}</li>
+    <Post key={post.id} post={post} excerpt />
   )
 
   return (
     <div className="App">
       <header className="App-header">
         { state.thunkInfo.loading && <span>Loading posts...</span>}
+        { state.thunkInfo.error && <span>Unable to load posts!</span>}
         {
           <ul>
             {!state.thunkInfo.loading && ListItem}

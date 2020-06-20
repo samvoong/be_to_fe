@@ -23,6 +23,9 @@ function App() {
       <header className="App-header">
         <RouteConfig />
       </header>
+      <footer className="footer">
+        <button onclick="window.scrollTo(0, 0)" class="tothetop" title="Go to top">Top</button>
+    </footer>
     </div>
   );
 }
